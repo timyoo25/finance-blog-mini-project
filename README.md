@@ -32,7 +32,7 @@
 
 #### Wireframes
 
-- [Desktop](tbd)
+- [Desktop](https://www.figma.com/file/q45XtFyLyzTBFNnyMwQHUw/kev-%26-tim-team-library?node-id=0%3A1)
 
 - [Mobile](tbd)
 
