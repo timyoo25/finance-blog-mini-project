@@ -24,7 +24,7 @@ puts "#{User.count} user(s) created"
 
 puts "#{Category.count} categories created"
 
-@test_blog = Blog.create!(title: "test", picture: "URL", body: "this is a test", user: @admin, category: @personal_finance)
+@test_blog = Blog.create!(title: "test", picture: "URL", body: "this is a test", user: @admin)
 
 puts "#{Blog.count} blogs created"
 
