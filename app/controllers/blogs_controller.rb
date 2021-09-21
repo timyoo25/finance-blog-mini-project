@@ -10,15 +10,16 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
-    render json: @blog
+    render json: @blog #, include: :comments
   end
 
   # POST /blogs
   def create
     @blog = Blog.new(blog_params)
+    @blog.user = @current_user
 
     if @blog.save
-      render json: @blog, status: :created, location: @blog
+      render json: @blog, status: :created
     else
       render json: @blog.errors, status: :unprocessable_entity
     end
@@ -38,6 +39,11 @@ class BlogsController < ApplicationController
     @blog.destroy
   end
 
+  def get_by_category
+    @blogs = Blog.where(category: params[:category_id])
+    render json: @blogs
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
@@ -46,6 +52,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :picture, :body, :user_id)
+      params.require(:blog).permit(:title, :picture, :body, :user_id, :category_id)
     end
 end
