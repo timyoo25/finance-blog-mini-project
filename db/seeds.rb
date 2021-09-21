@@ -8,5 +8,8 @@
 User.destroy_all
 
 @admin = User.create!(username: 'timkev', email: 'sparrow@email.com', password: '123456')
+@admin1 = User.create!(username: 'kev', email: 'kev@email.com', password: '123456')
+@admin2 = User.create!(username: 'tim', email: 'tim@email.com', password: '123456')
+@admin3 = User.create!(username: 'christian', email: 'christian@email.com', password: '123456')
 
 puts "#{User.count} user(s) created"
