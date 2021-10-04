@@ -6,6 +6,7 @@ import {
 	removeToken,
 	verifyUser,
 } from './services/auth';
+import Layout from './layouts/Layout'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -49,6 +50,21 @@ function App() {
         Route for blogs & categories
       
       */}
+      <Layout currentUser={currentUser} handleLogout={handleLogout}>
+        {/* <Switch>
+          <Route path='/login'>
+            <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path='/register'>
+						<Register handleRegister={handleRegister} />
+					</Route>
+          <Route path='/'>
+            <MainContainer currentUser={currentUser} />
+          </Route>
+        </Switch> */}
+      </Layout>
+      <br />
+      {/* <Footer /> */}
 
     </div>
   );
